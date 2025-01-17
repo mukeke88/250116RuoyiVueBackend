@@ -31,6 +31,9 @@ public class SysNotice extends BaseEntity
     /** 公告状态（0正常 1关闭） */
     private String status;
 
+    /** 排序字段 */
+    private Double sortOrder;
+
     public Long getNoticeId()
     {
         return noticeId;
@@ -84,6 +87,16 @@ public class SysNotice extends BaseEntity
         return status;
     }
 
+    public Double getSortOrder()
+    {
+        return sortOrder;
+    }
+
+    public void setSortOrder(Double sortOrder)
+    {
+        this.sortOrder = sortOrder;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
@@ -92,6 +105,7 @@ public class SysNotice extends BaseEntity
             .append("noticeType", getNoticeType())
             .append("noticeContent", getNoticeContent())
             .append("status", getStatus())
+            .append("sortOrder", getSortOrder())
             .append("createBy", getCreateBy())
             .append("createTime", getCreateTime())
             .append("updateBy", getUpdateBy())
